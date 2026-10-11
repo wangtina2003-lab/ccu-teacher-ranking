@@ -1,0 +1,487 @@
+:root {
+    /* 核心主題色系 */
+    --navy-dark: #1F2A44;      /* Navy */
+    --warm-beige: #E8DCC8;     /* Warm Beige */
+    --soft-gold: #C6A75E;      /* Soft Gold */
+    
+    --bg-main: #F4F1EA;        /* 網頁主背景 */
+    --card-bg: #FFFFFF;        /* 卡片純白背景 */
+    --border-color: #E2DDD5;   /* 柔和邊框 */
+    
+    --text-primary: #1F2A44;   /* 主文字 */
+    --text-secondary: #656E7B; /* 次要文字 */
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* 1. Header 改為典雅 Navy 深藍背景與彈性結構優化 */
+.bg-navy {
+    background-color: var(--navy-dark) !important;
+    box-shadow: 0 4px 20px rgba(31, 42, 68, 0.15);
+}
+
+/* Header 搜尋框樣式與佈局防推擠設定 */
+.header-search-container {
+    max-width: 380px;
+    min-width: 260px;
+    width: 100%;
+}
+
+.header-action-container {
+    min-width: 120px;
+}
+
+.updated-time-text {
+    color: var(--warm-beige);
+    font-size: 0.825rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.brand-icon {
+    background: var(--soft-gold);
+    color: var(--navy-dark);
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+.border-gold {
+    border-color: var(--soft-gold) !important;
+}
+
+.text-gold {
+    color: var(--soft-gold) !important;
+}
+
+.header-search-input {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--soft-gold);
+    color: #FFFFFF !important;
+    font-size: 0.875rem;
+}
+
+.header-search-input::placeholder {
+    color: rgba(232, 220, 200, 0.6);
+}
+
+.header-search-input:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--soft-gold);
+    box-shadow: 0 0 0 0.25rem rgba(198, 167, 94, 0.25);
+    color: #FFFFFF;
+}
+
+.btn-gold {
+    background-color: var(--soft-gold);
+    color: var(--navy-dark);
+    font-weight: 600;
+    border: 1px solid var(--soft-gold);
+    transition: all 0.2s ease;
+}
+
+.btn-gold:hover {
+    background-color: #b5954f;
+    color: #FFFFFF;
+    border-color: #b5954f;
+}
+
+/* 2. Header 右側重新整理按鈕 */
+.btn-navy-action {
+    background-color: transparent;
+    color: var(--warm-beige);
+    border: 1px solid var(--soft-gold);
+    transition: all 0.25s ease;
+    font-weight: 600;
+}
+
+.btn-navy-action:hover {
+    background-color: var(--soft-gold);
+    color: var(--navy-dark);
+    border-color: var(--soft-gold);
+}
+
+/* 3. KPI 指標卡片 */
+.kpi-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 140px;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(31, 42, 68, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(31, 42, 68, 0.06);
+}
+
+.kpi-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+}
+
+.kpi-value-container {
+    display: flex;
+    align-items: baseline;
+    height: 42px;
+    overflow: hidden;
+}
+
+.kpi-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.kpi-unit {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-left: 6px;
+    font-weight: 500;
+}
+
+.kpi-subtext {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+.text-indigo { color: var(--soft-gold) !important; font-weight: 700; }
+
+/* 4. 圖表與表格卡片 */
+.chart-card, .table-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(31, 42, 68, 0.03);
+}
+
+.card-header-custom {
+    margin-bottom: 20px;
+}
+
+.card-title-custom {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 2px;
+}
+
+.card-subtitle-custom {
+    font-size: 0.775rem;
+    color: var(--text-secondary);
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+/* 5. 高級商務表格與 Tabs 頁籤按鈕 */
+.rank-tabs .nav-link {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-radius: 6px;
+    padding: 6px 14px;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.rank-tabs .nav-link.active {
+    background-color: var(--navy-dark);
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(31, 42, 68, 0.2);
+}
+
+.custom-table {
+    border-color: var(--border-color);
+}
+
+.custom-table thead th {
+    background-color: var(--bg-main);
+    color: var(--navy-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 14px 16px;
+    border-bottom: 2px solid var(--border-color);
+    transition: background-color 0.25s ease;
+}
+
+.custom-table thead th.col-active {
+    background-color: #E8DCC870; /* 高亮主要排序欄位 */
+    color: var(--navy-dark);
+}
+
+.custom-table tbody td {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.25s ease;
+}
+
+.custom-table tbody td.cell-highlight {
+    background-color: #FDFBF7;
+    font-weight: 700;
+    color: var(--navy-dark);
+}
+
+.custom-table tbody tr:hover {
+    background-color: #F8F5EE;
+}
+
+/* 動態切換動畫效果 */
+.table-fade {
+    transition: opacity 0.15s ease-in-out;
+    opacity: 1;
+}
+
+.table-fade.fade-out {
+    opacity: 0.2;
+}
+
+/* 6. 排名標籤 */
+.rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.rank-top-1 { background-color: var(--soft-gold); color: #FFFFFF; }
+.rank-top-2 { background-color: var(--warm-beige); color: var(--navy-dark); }
+.rank-top-3 { background-color: #D3C4B1; color: var(--navy-dark); }
+.rank-normal { background-color: #F0EAE1; color: var(--text-secondary); }
+
+/* 7. 五大學程標籤 */
+.track-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.775rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.track-財務學程 { background-color: #1F2A44; color: #E8DCC8; }
+.track-運籌學程 { background-color: #8C7355; color: #FFFFFF; }
+.track-人力資源學程 { background-color: #C6A75E; color: #1F2A44; }
+.track-行銷學程 { background-color: #D8C8B0; color: #1F2A44; }
+.track-策略學程 { background-color: #4A5568; color: #FFFFFF; }
+.track-其他 { background-color: #E2DDD5; color: #656E7B; }
+
+/* 8. 官方連結按鈕 */
+.btn-table-link {
+    font-size: 0.8rem;
+    padding: 5px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--navy-dark);
+    color: var(--navy-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-table-link:hover {
+    background-color: var(--navy-dark);
+    color: var(--warm-beige);
+}
+
+.teacher-name-button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    font-weight: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.teacher-name-button:hover,
+.teacher-name-button:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.teacher-stat-modal {
+    width: min(760px, calc(100% - 32px));
+    max-width: none;
+    padding: 36px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    color: var(--text-primary);
+    box-shadow: 0 20px 60px rgba(31, 42, 68, 0.22);
+}
+
+.teacher-stat-modal::backdrop {
+    background: rgba(17, 25, 40, 0.52);
+    backdrop-filter: blur(2px);
+}
+
+.teacher-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.teacher-modal-eyebrow {
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.teacher-modal-title {
+    margin: 4px 0 0;
+    color: var(--navy-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.teacher-modal-close {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.teacher-modal-track {
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Modal 雙卡片左右並排樣式 */
+.teacher-modal-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.teacher-modal-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: #FBFAF7;
+    box-shadow: 0 2px 6px rgba(31, 42, 68, 0.02);
+}
+
+.stat-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+}
+
+.stat-card-row {
+    display: flex;
+    align-items: baseline;
+    font-size: 0.95rem;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    min-width: 85px;
+}
+
+.stat-value {
+    color: var(--navy-dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.teacher-modal-research {
+    margin-top: 24px;
+}
+
+.teacher-modal-research h3 {
+    margin-bottom: 16px;
+    color: var(--navy-dark);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.teacher-modal-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+}
+
+.teacher-keyword {
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #F4F1EA;
+    color: var(--navy-dark);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.teacher-keyword-empty {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.teacher-modal-profile-link {
+    display: inline-block;
+    margin-top: 24px;
+}
+
+/* 9. 問號提示圖示懸停視覺效果 */
+.daily-avg-tooltip-icon {
+    transition: color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.daily-avg-tooltip-icon:hover {
+    color: var(--soft-gold) !important;
+    transform: scale(1.2);
+}
+
+@media (max-width: 520px) {
+    .teacher-stat-modal {
+        padding: 22px 18px;
+    }
+
+    .teacher-modal-stats {
+        grid-template-columns: 1fr;
+    }
+}
