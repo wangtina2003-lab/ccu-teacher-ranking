@@ -3,7 +3,7 @@ let dailyAvgBarChart = null;
 let categoryPieChart = null;
 let categoryDailyHorizontalChart = null; // 新增：橫向長條圖實例
 
-const API_URL = "http://127.0.0.1:5000/api/teachers";
+const API_URL = "https://ccu-teacher-api.onrender.com/api/teachers";
 
 // 專屬學程主題色碼
 const TRACK_COLORS = {
