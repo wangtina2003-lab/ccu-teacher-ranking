@@ -1,0 +1,1 @@
+# ccu-teacher-ranking
